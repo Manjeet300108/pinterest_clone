@@ -1,30 +1,56 @@
 <% include ./partials/header.ejs %>
 
+<div
+  class="w-full min-h-screen bg-[url('https://images.unsplash.com/photo-1505778489066-159c5f4a6c0f?w=500&auto=format&fit=crop&q=60')] bg-no-repeat bg-center bg-cover flex items-center justify-center px-4">
 
-  <div
-    class="w-full h-screen bg-[url('https://images.unsplash.com/photo-1505778489066-159c5f4a6c0f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODh8fGFic3RyYWN0fGVufDB8MHwwfHx8MA%3D%3D')] bg-no-repeat bg-center bg-cover flex items-center justify-center">
-    <div class="w-[25vw] bg-white px-20 py-10 rounded-[30px] ">
-      <h1 class="text-3xl text-center tracking-tight font-semibold text-zinc-700 capitalize leading-none">Welcome to
-        pinterest</h1>
-      <% if(error.length> 0){ %>
-        <p class="error text-center text-red-700">
-          <%= error %>
-        </p>
-        <% } %>
-          <form action="/login" method="post">
-            <input class="border-2 rounded-md w-full px-3 py-2 mt-2 " type="text" name="username"
-              placeholder="username">
-            <input class="border-2 rounded-md w-full px-3 py-2 mt-2 " type="password" name="password"
-              placeholder="password">
-            <a class="mt-2 inline-block font-semibold text-zinc-500" href="">Forgot password?</a>
-            <input class="border-2 rounded-full w-full px-3 py-2 mt-2 bg-red-600 text-white" type="submit" name="submit"
-              value="Login">
-            <p class="text-xs font-semibold text-zinc-700 mt-7 w-3/4 mx-auto text-center">By continuing, you agree to
-              Pinterest's Terms of Service and acknowledge you've read our Privacy Policy. Notice at collection.</p>
-          </form>
-          <a class="mt-7 inline-block font-semibold text-sm text-zinc-500 text-center w-full" href="/register">Don't
-            have an account ?</a>
-    </div>
+  <div class="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 bg-white px-6 sm:px-10 py-8 rounded-3xl shadow-xl">
+
+    <h1 class="text-2xl sm:text-3xl text-center font-semibold text-zinc-700 capitalize">
+      Welcome to Pinterest
+    </h1>
+
+    <% if(error.length> 0){ %>
+      <p class="text-center text-red-600 mt-2 text-sm">
+        <%= error %>
+      </p>
+    <% } %>
+
+    <form action="/login" method="post" class="mt-6">
+
+      <input
+        class="border-2 rounded-md w-full px-3 py-2 mt-3"
+        type="text"
+        name="username"
+        placeholder="Username">
+
+      <input
+        class="border-2 rounded-md w-full px-3 py-2 mt-3"
+        type="password"
+        name="password"
+        placeholder="Password">
+
+      <a class="mt-3 inline-block text-sm font-semibold text-zinc-500 hover:text-zinc-700"
+         href="#">
+         Forgot password?
+      </a>
+
+      <input
+        class="w-full px-3 py-2 mt-4 bg-red-600 hover:bg-red-700 transition text-white rounded-full"
+        type="submit"
+        value="Login">
+
+      <p class="text-xs text-zinc-600 mt-6 text-center px-4">
+        By continuing, you agree to Pinterest's Terms of Service and acknowledge you've read our Privacy Policy.
+      </p>
+
+    </form>
+
+    <a class="mt-6 inline-block text-sm font-semibold text-zinc-500 text-center w-full hover:text-zinc-700"
+       href="/register">
+       Don't have an account?
+    </a>
+
   </div>
+</div>
 
-  <% include ./partials/footer.ejs %>
+<% include ./partials/footer.ejs %>

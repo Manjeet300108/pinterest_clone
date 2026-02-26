@@ -1,48 +1,73 @@
 <% include ./partials/header.ejs %>
 
-    <div class="profile w-full min-h-screen bg-zinc-800 text-white pt-1">
+<div class="w-full min-h-screen bg-zinc-800 text-white pt-6 px-4 md:px-10">
 
-        <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
-            <input type="file" name="image">
-        </form>
+    <!-- Hidden Upload Form -->
+    <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+    </form>
 
-        <div class="profdets flex flex-col items-center mt-20">
-            <div class="relative">
-                <span id="uploadicon"
-                    class="w-8 h-8 absolute bottom-0 right-0 rounded-full flex items-center justify-center bg-zinc-200">
-                    <i class="ri-pencil-fill text-zinc-800"></i>
-                </span>
-                <div class="w-34 h-34 bg-zinc-200 rounded-full overflow-hidden">
-                    <img class="w-full h-full object-cover" src="/images/uploads/<%=user.profileImg%>" alt="">
-                </div>
+    <!-- Profile Details -->
+    <div class="flex flex-col items-center mt-10">
+
+        <div class="relative">
+
+            <!-- Edit Icon -->
+            <span id="uploadicon"
+                class="w-8 h-8 absolute bottom-0 right-0 rounded-full flex items-center justify-center bg-zinc-200 cursor-pointer">
+                <i class="ri-pencil-fill text-zinc-800"></i>
+            </span>
+
+            <!-- Profile Image -->
+            <div class="w-24 h-24 sm:w-32 sm:h-32 bg-zinc-200 rounded-full overflow-hidden">
+                <img class="w-full h-full object-cover"
+                     src="/images/uploads/<%=user.profileImg%>" 
+                     alt="">
             </div>
 
-            <h1 class="text-3xl font-semibold mt-5">
-                <%= user.fullname%>
-            </h1>
-            <h3 class="text-md">@<%=user.username%>
-            </h3>
-            <a href="/add" class="px-10 py-2 rounded-lg bg-red-700 mt-5 text-xs font-semibold">Add New Post</a>
         </div>
 
+        <h1 class="text-2xl sm:text-3xl font-semibold mt-5 text-center">
+            <%= user.fullname%>
+        </h1>
 
+        <h3 class="text-sm sm:text-md opacity-70">
+            @<%=user.username%>
+        </h3>
 
-        <div class="cards flex flex-wrap gap-10 px-10 mt-12">
-            <div class="card">
+        <a href="/add"
+           class="px-6 py-2 rounded-lg bg-red-700 hover:bg-red-600 transition mt-5 text-xs sm:text-sm font-semibold">
+           Add New Post
+        </a>
 
-
-                <div class="w-52 h-40 bg-zinc-200 rounded-lg overflow-hidden">
-                    <a href="/posts/show">
-                        <img class="w-full h-full object-cover" src="/images/uploads/<%=user?.posts[0]?.image%>" alt="">
-                    </a>
-                </div>
-                <h3 class="text-xl font-semibold mt-3">Your pins</h3>
-                <h5 class="text-sm font-medium opacity-60">
-                    <%=user.posts.length %> pins
-                </h5>
-            </div>
-        </div>
     </div>
 
 
-    <% include ./partials/footer.ejs %>
+    <!-- User Cards -->
+    <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        <div class="bg-zinc-700 p-4 rounded-xl shadow-md">
+
+            <div class="w-full aspect-video bg-zinc-200 rounded-lg overflow-hidden">
+                <a href="/posts/show">
+                    <img class="w-full h-full object-cover"
+                         src="/images/uploads/<%=user?.posts[0]?.image%>"
+                         alt="">
+                </a>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-4">
+                Your Pins
+            </h3>
+
+            <h5 class="text-sm opacity-60">
+                <%=user.posts.length %> pins
+            </h5>
+
+        </div>
+
+    </div>
+
+</div>
+
+<% include ./partials/footer.ejs %>
