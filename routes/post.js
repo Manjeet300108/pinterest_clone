@@ -1,3 +1,4 @@
+const { type } = require('express/lib/response');
 const mongoose = require('mongoose')
 
 
@@ -10,6 +11,11 @@ const postSchema = mongoose.Schema({
   title :  String,
   description :  String,
   image : String,
+  likes:[{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'user',
+    default : []
+  }]
 });
 
 

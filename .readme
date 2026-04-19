@@ -1,0 +1,161 @@
+# 📌 Pinterest Clone (Full Stack Project)
+
+A full-stack Pinterest-inspired web application where users can create, view, like, and manage image posts (pins).
+
+Built using **Node.js, Express, MongoDB, EJS**, and modern UI practices.
+
+---
+
+## 🚀 Features
+
+### 🔐 Authentication
+- User Registration & Login
+- Secure authentication using Passport.js
+- Session-based login system
+- Flash messages for error handling
+
+---
+
+### 👤 User Profile
+- View personal profile
+- Upload profile image
+- See all your created posts
+
+---
+
+### 📌 Posts (Pins)
+- Create new posts with image upload
+- View posts in profile & feed
+- Open single post page
+- Download images
+
+---
+
+### 🗑 Post Management
+- Delete your own posts
+- Protected routes (only owner can delete)
+
+---
+
+### ❤️ Interaction
+- Like / Unlike posts
+- View posts from other users
+
+---
+
+### 👥 Public Profiles
+- Visit other users' profiles
+- See their posts
+
+---
+
+### 🔍 Search
+- Search users by username
+- Instant redirect to profile
+
+---
+
+### 🎨 UI/UX Features
+- Responsive design (Tailwind CSS)
+- Image preview before upload
+- Loading buttons & validation
+- Show/Hide password 👁
+- Confirm password validation (live match)
+- Clean modern UI
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** EJS, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (Mongoose)
+- **Authentication:** Passport.js
+- **File Upload:** Multer
+
+---
+
+## 📁 Project Structure
+
+
+pinterest_2.0/
+│
+├── routes/
+│ └── index.js
+│
+├── views/
+│ ├── partials/
+│ ├── index.ejs
+│ ├── register.ejs
+│ ├── profile.ejs
+│ ├── feed.ejs
+│ ├── show.ejs
+│ ├── post.ejs
+│ └── userProfile.ejs
+│
+├── public/
+│ ├── stylesheets/
+│ ├── javascripts/
+│ └── images/uploads/
+│
+├── models/
+│ ├── users.js
+│ └── post.js
+│
+├── app.js
+├── package.json
+└── README.md
+
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/your-username/pinterest-clone.git
+cd pinterest-clone
+npm install
+
+🔑 Environment Variables
+Create a .env file in root:
+
+MONGO_URI=your_mongodb_connection_string
+SESSION_SECRET=your_secret_key
+
+
+▶️ Run the Project
+npm start
+
+Open in browser:
+
+http://localhost:3000
+
+📸 Screens (Add Later)
+Login Page
+Register Page
+Profile Page
+Feed Page
+Post View Page
+
+
+###💡 Future Improvements
+💬 Comments system
+👥 Follow/Unfollow users
+🔔 Notifications
+⚡ Real-time updates
+📜 Infinite scroll
+✏️ Edit post feature
+🤝 Contributing
+
+Feel free to fork this repo and improve it.
+
+👨‍💻 Author
+
+Manjeet Singh
+
+MERN Stack Developer
+Passionate about building real-world applications
+
+⭐ If you like this project, please star the repo!
+
+--Manjeet Singh --
